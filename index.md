@@ -10,6 +10,7 @@ My research focuses on Robotic Control, with specific interests in legged robot 
   
 **SkyRover: Air-ground Robots for Low-altitude Air Delivery Scenarios**  
 2  
+![](skyrover.gif)
   
 **Peter: A Fully Automatic Fruit and Vegetable Peeling Machine**  
 3
