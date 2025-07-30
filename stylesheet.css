@@ -78,15 +78,20 @@ body,
 td,
 th,
 tr,
-p,
+p {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
 a {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
+  font-weight: bold;
 }
 
 strong {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
+  font-weight: bold;
 }
 
 h2 {
@@ -95,7 +100,7 @@ h2 {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 22px;
 }
-
+  
 .papertitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
@@ -139,4 +144,123 @@ span.highlight {
     padding: 20px;
     display: inline-block;
     border-radius: 10px;
+}
+
+table {
+  width: 100% !important;
+  max-width: 800px !important;
+  border:0px;
+  border-spacing:0px;
+  border-collapse:separate;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  }
+
+.pub-section {
+  width: 100% !important;
+  max-width: 800px !important;
+  border:0px;
+  border-spacing:0px;
+  border-collapse:separate;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.pub-title {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-weight: 500;
+  /* letter-spacing: 1.5px; */
+}
+
+.pub-divider {
+border: 1px outset grey;
+/* border-top: 2.5px solid #bbb; */
+margin: 0 0 30px 0;
+opacity: 0.9;
+}
+
+.pub-item {
+display: flex;
+gap: 30px;
+align-items: flex-start;
+margin-bottom: 40px;
+flex-wrap: wrap;
+}
+
+.pub-img {
+flex: 0 0 320px;
+max-width: 320px;
+/* border-radius: 0px; */
+overflow: hidden;
+background: #fff;
+box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+margin-bottom: 10px;
+}
+.pub-img img {
+width: 100%;
+display: block;
+/* border-radius: 0px; */
+}
+.pub-info {
+flex: 1 1 400px;
+min-width: 260px;
+display: flex;
+flex-direction: column;
+gap: 2px;
+}
+.pub-info h2 {
+font-size: 1rem;
+margin: 0;
+font-family: 'Lato', Verdana, Helvetica, sans-serif;
+font-weight: bold;
+line-height: 1.5;
+}
+.pub-authors {
+font-size: 1rem;
+margin-bottom: 0;
+line-height: 1.5;
+
+}
+.pub-venue {
+font-size: 1rem;
+font-style: italic;
+margin-bottom: 0;
+line-height: 1.5;
+}
+.pub-links {
+margin: 0;
+font-size: 1.00rem;
+/* letter-spacing: 0.11em; */
+}
+.pub-links a {
+color: #337ab7;
+font-weight: bold;
+text-decoration: none;
+margin-right: 12px;
+transition: color 0.2s;
+font-size: 1.00rem;
+}
+.pub-links a:hover {
+color: #2196f3;
+text-decoration: underline;
+}
+.pub-tldr {
+font-size: 1.00rem;
+margin-top: 5px;
+color: #222;
+}
+
+@media (max-width: 1200px) {
+.pub-section {
+padding: 12px 2vw 24px 2vw;
+}
+.pub-item {
+gap: 30px;
+}
+.pub-img {
+max-width: 220px;
+border-radius: 14px;
+}
 }
