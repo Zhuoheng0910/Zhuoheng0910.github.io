@@ -1,0 +1,6 @@
+@article{wang2025dribble,
+  title={Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion},
+  author={Wang, Zhuoheng and Zhou, Jinyin and Wu, Qi},
+  journal={arXiv preprint arXiv:2505.12679},
+  year={2025}
+}

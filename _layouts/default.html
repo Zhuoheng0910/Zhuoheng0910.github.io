@@ -51,7 +51,7 @@
               </p>
               
               <p style="text-align:center">
-                <a href="/docs/CV.pdf">CV</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="/docs/Zhuoheng_Wang_CV.pdf">CV</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <!-- <a href="https://github.com/chengxuxin">GitHub</a>&nbsp;&nbsp;|&nbsp;&nbsp; -->
                 <!-- <a href="https://scholar.google.com/citations?hl=en&user=Z8vhOxYAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a>&nbsp;&nbsp;|&nbsp;&nbsp; -->
                 <a href="https://twitter.com/zhuoheng22">Twitter</a>
@@ -142,6 +142,7 @@
         <br><br>
 
 
+<!-- --------------------Publications-------------------- -->
         <h2>Publications</h2>
         <hr>
         * denotes equal contribution
@@ -240,9 +241,81 @@
           {% endfor %}
         </table>
         
-        
 
         <br> <br> 
+
+
+<!-- --------------------RoboCup-------------------- -->
+        <h2>RoboCup Competitions</h2>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;" border="0">
+          {% for rsc in site.posts %}
+          {% for cat in rsc.categories %}
+          {% if cat == 'robocup' %}
+          <tr {% if rsc.gif or rsc.video %}onmouseout="{{rsc.abbr}}_stop()" onmouseover="{{rsc.abbr}}_start()"{% endif %}>
+            <td style="padding:0px 0px;width:30%;vertical-align:middle;min-width:120px">
+              
+              <div class="one" style="width:100%; height:auto; max-width:100%">
+                <div class="two" id='{{rsc.image}}' style="width:100%; height:auto; max-width:100%">
+                  <a href="{{rsc.webpage}}">
+                    <img src='{{rsc.image}}' style="width:100%; height:auto; max-width:100%">
+                  </a>
+                </div>
+                {% if rsc.gif %}
+                <img src='{{rsc.gif}}' style="width:100%; height:auto; max-width:100%">
+                {% elsif rsc.video %}
+                <video src='{{rsc.video}}' style="width:100%; height:auto; max-width:100%" autoplay muted loop></video>
+                {% else %}
+                <img src='{{rsc.image}}' style="width:80%; height:auto; max-width:100%">
+                {% endif %}
+              </div>
+              <script type="text/javascript">
+                function {{rsc.abbr}}_start() {
+                  document.getElementById('{{rsc.image}}').style.opacity = "0";
+                }
+
+                function {{rsc.abbr}}_stop() {
+                  document.getElementById('{{rsc.image}}').style.opacity = "1";
+                }
+                nlt_stop()
+              </script>
+            </td>
+            <td style="padding:20px 0px 20px 40px;width:70%;vertical-align:middle">
+                <a href="{{rsc.webpage}}"><h3>{{rsc.title}}</h3></a><br>
+              
+              {% if rsc.author %}
+              {{rsc.author}}
+              {% endif %}
+
+              {% if rsc.publishedOn %}
+              <br>
+              <em><b>{{rsc.publishedOn}}</b></em>
+              {% endif %}<br><br>
+              
+              {% if rsc.links %}
+              {{rsc.links}}
+                {% if rsc.bib %}
+                  | <a href="javascript:togglebib('{{rsc.abbr}}')">BibTeX</a> <br>
+                  <div class="paper" id="{{rsc.abbr}}">
+                    <blockquote style="display:none">
+
+                      <iframe src="{{rsc.bib}}" scrolling='auto' frameborder='0' width="100%" height="100%">
+                      </iframe>
+                    </blockquote>
+                  </div>
+                {% endif %}
+              {% endif %}
+
+              
+              {% if rsc.media %}
+              Media: {{rsc.media}}&nbsp
+              {% endif %}
+              <br>
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </table>
         
         
         
