@@ -1,0 +1,9 @@
+@misc{Jang2025,
+    title = {SEEC: Stable End-Effector Control with Model-Enhanced  Residual Learning for Humanoid Loco-Manipulation},
+    author = {Jaehwi Jang and Zhuoheng Wang and Ziyi Zhou and Feiyang Wu and Ye Zhao},
+    year  = {2025},
+    date = {2025-09-16},
+    pubstate = {submitted},
+    tppubtype = {misc}
+}
+
