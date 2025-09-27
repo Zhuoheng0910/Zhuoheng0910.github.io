@@ -21,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-  <link rel="shortcut icon" type="images/png" href="images/thu_logo.png">
+  <!-- <link rel="shortcut icon" type="images/png" href="images/thu_logo.png"> -->
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css"> -->
   <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
@@ -48,6 +48,8 @@
                 I was also fortunate to be a member of DISCOVER Lab at <a href="https://air.tsinghua.edu.cn/en/">Institute of AI Research</a> in Tsinghua University, advised by <a href="https://air.tsinghua.edu.cn/en/info/1046/1196.htm">Prof. Guyue Zhou</a>.<br>
                 <br>
                 My research interests include <b>Legged Robotics</b>, <b>Robot Learning and Control</b>, and <b>Athletic Intelligence</b>. I am particularly interested in Humanoid Robot. <br>
+                <br>
+                <b>I am applying for a PhD position in 2026 Fall.</b>
               </p>
               
               <p style="text-align:center">
@@ -115,7 +117,7 @@
           </tr>
         </table> -->
 
-<!-- --------------------News-------------------- -->
+<!-- --------------------Award & Honor-------------------- -->
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;" border="0">
           <tr>
             <td>
@@ -248,6 +250,7 @@
 
 <!-- --------------------RoboCup-------------------- -->
         <h2>RoboCup Competitions</h2>
+        <hr>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;" border="0">
           {% for rsc in site.posts %}
           {% for cat in rsc.categories %}
@@ -310,6 +313,75 @@
               {% if rsc.media %}
               Media: {{rsc.media}}&nbsp
               {% endif %}
+              <br>
+            </td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </table>
+
+        <br>
+        <br>
+        <br>
+
+<!-- --------------------Experience-------------------- -->
+        <h2>Experience</h2>
+        <hr>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;" border="0">
+          {% for rsc in site.posts %}
+          {% for cat in rsc.categories %}
+          {% if cat == 'experience' %}
+          <tr {% if rsc.gif or rsc.video %}onmouseout="{{rsc.abbr}}_stop()" onmouseover="{{rsc.abbr}}_start()"{% endif %}>
+            <td style="padding:0px 0px;width:30%;vertical-align:middle;min-width:120px">
+              
+              <div class="one" style="width:100%; height:auto; max-width:100%">
+                <div class="two" id='{{rsc.image}}' style="width:100%; height:auto; max-width:100%">
+                  <a href="{{rsc.webpage}}">
+                    <img src='{{rsc.image}}' style="width:100%; height:auto; max-width:100%">
+                  </a>
+                </div>
+                {% if rsc.image %}
+                <img src='{{rsc.image}}' style="width:100%; height:auto; max-width:100%">
+                {% endif %}
+              </div>
+              <script type="text/javascript">
+                function {{rsc.abbr}}_start() {
+                  document.getElementById('{{rsc.image}}').style.opacity = "0";
+                }
+
+                function {{rsc.abbr}}_stop() {
+                  document.getElementById('{{rsc.image}}').style.opacity = "1";
+                }
+                nlt_stop()
+              </script>
+            </td>
+            <td style="padding:20px 0px 20px 40px;width:70%;vertical-align:middle">
+                <a href="{{rsc.webpage}}"><h3>{{rsc.title}}</h3></a><br>
+              
+              {% if rsc.time %}
+              {{rsc.time}}
+              {% endif %}
+
+              {% if rsc.role %}
+              <br>
+              <b>{{rsc.role}}</b>
+              {% endif %}
+
+              {% if rsc.abbr == "tsinghua" %}
+              <br>
+              <b><em>GPA: 3.9/4.0</em></b>
+              {% endif %}
+              {% if rsc.abbr == "gatech" %}
+              <br>
+              <b><em>Advisor: Prof. Ye Zhao and Prof. Anqi Wu</em></b>
+              {% endif %}
+
+
+              <br><br>
+              
+              
+
               <br>
             </td>
           </tr>
